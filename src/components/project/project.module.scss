@@ -1,0 +1,40 @@
+.main_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: -2rem;
+  gap: 4rem;
+}
+
+.project_info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  .project_text {
+    width: 100%;
+  }
+
+  .projectImage {
+    border: 2px solid red;
+    width: 200px;
+    height: 200px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.task_columns {
+  border: 2px solid brown;
+  height: 500px;
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  gap: 2rem;
+}

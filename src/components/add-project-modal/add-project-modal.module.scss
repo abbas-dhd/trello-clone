@@ -1,0 +1,44 @@
+.form {
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+
+  .formInput {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 1rem;
+
+    input {
+      height: 2rem;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+    }
+  }
+  button {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    width: auto;
+    height: auto;
+    font-size: 1.25rem;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+  }
+}
+.error_message {
+  color: rgb(255, 89, 89);
+  font-size: 1rem;
+  width: 80%;
+  font-weight: bold;
+}

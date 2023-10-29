@@ -1,0 +1,18 @@
+.task_column {
+  position: relative;
+  border: 2px solid blue;
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  .columnTitle {
+    border: 2px solid red;
+    background-color: white;
+  }
+  .card_container {
+    border: 2px solid yellow;
+    padding: 1rem;
+    height: 100%;
+  }
+}
