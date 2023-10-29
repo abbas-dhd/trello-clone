@@ -2,12 +2,12 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import {
   ProjectType,
   TaskType,
-  projectsDataSliceType,
+  ProjectsDataSliceType,
 } from '../../types/types';
 import { RootState } from '../store';
 import { INITIAL_COLUMNS, UNSPLASH_IMAGES } from '../../constants/constants';
 
-const initialState: projectsDataSliceType = {
+const initialState: ProjectsDataSliceType = {
   projects: [],
 };
 
@@ -15,6 +15,13 @@ const projectsDataSlice = createSlice({
   initialState,
   name: 'projectsDataSlice',
   reducers: {
+    initializeProjectData: (
+      _,
+      payload: PayloadAction<{ newState: ProjectsDataSliceType }>
+    ) => {
+      const newState = payload.payload.newState;
+      return newState;
+    },
     addNewProject: (
       state,
       action: PayloadAction<{ projectName: string; projectDescription: string }>
@@ -132,6 +139,7 @@ export const {
   addTaskToProject,
   updateProjectData,
   resetProjectData,
+  initializeProjectData,
 } = projectsDataSlice.actions;
 
 export const promoDetails = (state: RootState) => state.projectsDataSlice;

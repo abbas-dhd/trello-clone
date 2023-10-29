@@ -19,6 +19,12 @@ export type ProjectType = {
   statusColumns: StatusColumnType[];
 };
 
-export type projectsDataSliceType = {
+export type ProjectsDataSliceType = {
   projects: ProjectType[];
+};
+
+export type UserDataSliceType = {
+  userEmail: string;
+  password: string;
+  isLoggedIn: boolean;
 };

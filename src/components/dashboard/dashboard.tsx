@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProjectCard from '../project-card/project-card';
 import styles from './dashboard.module.scss';
 import AddProjectModal from '../add-project-modal/add-project-modal';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { addNewProject } from '../../redux/slices/projectsDataSlice';
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
   const [isAddProjectModalOpen, setIsAddProjectModalOpen] = useState(false);
   const projectsData = useAppSelector((state) => state.projectsDataSlice);
+  const userData = useAppSelector((state) => state.userDataSlice);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const addProjectHandler = (
     projectName: string,
@@ -24,6 +27,13 @@ function Dashboard() {
   const closeAddProjectModal = () => {
     setIsAddProjectModalOpen(false);
   };
+
+  useEffect(() => {
+    // redirect to login if user is not logged in
+    if (!userData.isLoggedIn) {
+      navigate('/login', { replace: true });
+    }
+  }, [navigate, userData]);
 
   return (
     <>

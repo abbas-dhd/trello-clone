@@ -10,6 +10,7 @@ import { updateProjectData } from '../../redux/slices/projectsDataSlice';
 function Project() {
   const { projectId } = useParams();
   const projectData = useAppSelector((state) => state.projectsDataSlice);
+  const userData = useAppSelector((state) => state.userDataSlice);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -38,12 +39,16 @@ function Project() {
   };
 
   useEffect(() => {
+    if (!userData.isLoggedIn) {
+      navigate('/login', { replace: true });
+    }
+
     if (!projectId || projectIndex === -1) {
       navigate('/', {
         replace: true,
       });
     }
-  }, [projectId, navigate, projectIndex]);
+  }, [projectId, navigate, projectIndex, userData]);
 
   return (
     <div className={styles.main_container}>
