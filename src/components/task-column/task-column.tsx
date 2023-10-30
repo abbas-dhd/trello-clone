@@ -35,9 +35,11 @@ const TaskColumn = ({ columnData, projectId }: TaskColumnProps) => {
       </div>
 
       <Droppable droppableId={columnData.columnId}>
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className={styles.card_container}
+            className={`${styles.card_container} ${
+              snapshot.isDraggingOver && styles.light_background
+            }`}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
@@ -58,7 +60,7 @@ const TaskColumn = ({ columnData, projectId }: TaskColumnProps) => {
       </Droppable>
 
       <div
-        style={{ height: '50px', border: '2px solid red' }}
+        className={styles.add_task_button}
         onClick={() => {
           setIsAddingTask(true);
         }}

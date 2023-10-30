@@ -1,5 +1,5 @@
-import React from 'react';
 import styles from './modal.module.scss';
+import React from 'react';
 import { createPortal } from 'react-dom';
 
 type ModalProps = {

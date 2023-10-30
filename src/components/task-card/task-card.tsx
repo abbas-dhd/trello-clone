@@ -1,7 +1,7 @@
+import styles from './task-card.module.scss';
 import { useState } from 'react';
 import { TaskType } from '../../types/types';
 import TaskModal from '../task-modal/task-modal';
-import styles from './task-card.module.scss';
 import { Draggable } from '@hello-pangea/dnd';
 
 type TaskCardProps = {

@@ -11,9 +11,18 @@ export const AddTask = ({
 }: AddTaskProps) => {
   const [taskTitle, setTaskName] = useState<string>('');
   const [taskDescription, setTaskDescription] = useState<string>('');
+  const [isFormValid, setIsFormValid] = useState<boolean>(true);
 
   const taskNameRef = useRef<HTMLInputElement>(null);
   const addTaskRef = useRef<HTMLInputElement>(null);
+
+  const validateForm = (_taskTitle: string, _taskDescription: string) => {
+    if (_taskTitle.trim() === '' || _taskDescription.trim() === '') {
+      setIsFormValid(false);
+      return false;
+    }
+    submitHandler(_taskTitle, _taskDescription);
+  };
 
   useEffect(() => {
     taskNameRef.current?.focus();
@@ -47,9 +56,12 @@ export const AddTask = ({
           }}
         />
       </div>
+      {!isFormValid && (
+        <p className={styles.error_message}>Fields cannot be empty</p>
+      )}
       <button
         onClick={() => {
-          submitHandler(taskTitle, taskDescription);
+          validateForm(taskTitle, taskDescription);
         }}
       >
         Done

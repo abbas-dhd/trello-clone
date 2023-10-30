@@ -8,19 +8,28 @@
   margin: auto;
   margin-top: -2rem;
   gap: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .project_info {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  overflow: auto;
+
   .project_text {
     width: 100%;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
   }
 
   .projectImage {
-    border: 2px solid red;
-    width: 200px;
+    width: 100%;
     height: 200px;
     img {
       width: 100%;
@@ -31,8 +40,11 @@
 }
 
 .task_columns {
-  border: 2px solid brown;
-  height: 500px;
+  border: 3px solid var(--primary-color);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1rem;
+  height: 600px;
   display: flex;
   width: fit-content;
   max-width: 100%;

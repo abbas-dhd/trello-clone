@@ -61,8 +61,8 @@ function Router() {
         <Route Component={Registration} path="/register" />
         <Route Component={Dashboard} path="/" />
         <Route Component={Project} path="/project/:projectId" />
-        {/* Catch-all route for "/projects" and other unhandled routes */}
-        <Route path="/*" element={<Dashboard />} />
+        {/* Catch-all unhandled routes */}
+        <Route Component={Dashboard} path="/*" />
       </Routes>
     </BrowserRouter>
   );

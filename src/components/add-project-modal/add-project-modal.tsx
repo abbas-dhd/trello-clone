@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useState } from 'react';
 import styles from './add-project-modal.module.scss';
+import React, { ChangeEvent, useState } from 'react';
 import Modal from '../modal/modal';
 
 type AddProjectModalProps = {
@@ -26,6 +26,7 @@ const AddProjectModal = ({
   return (
     <Modal closeModalHandler={closeAddProjectModal}>
       <div className={styles.form}>
+        <h2>Add Project</h2>
         <div className={styles.formInput}>
           <label htmlFor="projectName">Project Name</label>
           <input
@@ -57,7 +58,9 @@ const AddProjectModal = ({
           </div>
         )}
 
-        <button onClick={validateInput}> Add Project</button>
+        <button className={styles.submit_button} onClick={validateInput}>
+          Add
+        </button>
       </div>
     </Modal>
   );

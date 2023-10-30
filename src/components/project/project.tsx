@@ -57,9 +57,6 @@ function Project() {
           <h2>{projectName}</h2>
           <p>{projectDescription}</p>
         </div>
-        <div className={styles.projectImage}>
-          <img src={projectImageURL} />
-        </div>
       </div>
       <DragDropContext onDragEnd={onDragEnd}>
         <div className={styles.task_columns}>

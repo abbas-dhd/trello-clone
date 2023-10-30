@@ -60,6 +60,7 @@ export const Login = () => {
           type="email"
           name="email"
           value={email}
+          placeholder="abc@gmail.com"
           onChange={(e) => {
             setEmail(e.target.value);
           }}

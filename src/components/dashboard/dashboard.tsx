@@ -1,6 +1,6 @@
+import styles from './dashboard.module.scss';
 import { useEffect, useState } from 'react';
 import ProjectCard from '../project-card/project-card';
-import styles from './dashboard.module.scss';
 import AddProjectModal from '../add-project-modal/add-project-modal';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { addNewProject } from '../../redux/slices/projectsDataSlice';
@@ -56,7 +56,13 @@ function Dashboard() {
               );
             })}
 
-            <div onClick={openAddProjectModal}> + Add Project</div>
+            <div
+              className={styles.add_project_button}
+              onClick={openAddProjectModal}
+            >
+              {' '}
+              + Add Project
+            </div>
           </div>
         </div>
       </div>

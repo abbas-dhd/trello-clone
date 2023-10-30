@@ -1,6 +1,16 @@
 .task_card {
-  border: 2px solid green;
-  height: 100px;
-  margin-bottom: 5px;
+  padding: 0.5rem;
+  height: 110px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background-color: white;
+  border: 3px solid var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0px 3px var(--primary-color);
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   cursor: pointer;
 }

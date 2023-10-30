@@ -12,8 +12,9 @@ const TaskModal = ({ taskData, closeTaskModalHandler }: TaskModalProps) => {
     <Modal closeModalHandler={closeTaskModalHandler}>
       <div className={styles.task_info}>
         <span>#{taskData.taskId}</span>
-        <h1>{taskData.taskTitle}</h1>
-        <p>{taskData.taskDescription}</p>
+        <h2>{taskData.taskTitle}</h2>
+        <p className={styles.label}>{'Description:'}</p>
+        <p className={styles.task_description}>{taskData.taskDescription}</p>
       </div>
     </Modal>
   );

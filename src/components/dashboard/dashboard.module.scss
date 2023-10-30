@@ -6,12 +6,15 @@
   justify-content: center;
   margin: auto;
   gap: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .upper_container {
   h1 {
     font-size: 3rem;
-    margin-top: 12px;
+    margin-top: -12px;
+    margin-bottom: 24px;
     padding: 0;
   }
 }
@@ -26,7 +29,24 @@
 
   .project_cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    .add_project_button {
+      height: 200px;
+      border: 3px solid var(--primary-color);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.75rem;
+      cursor: pointer;
+      background-color: var(--primary-color-light);
+      box-shadow: 3px 3px 0px 3px var(--primary-color);
+
+      &:hover {
+        background-color: var(--primary-color);
+        color: white;
+      }
+    }
   }
 }
