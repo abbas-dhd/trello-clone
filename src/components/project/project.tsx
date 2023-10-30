@@ -21,6 +21,7 @@ function Project() {
   const projectName = projectData.projects[projectIndex]?.projectName ?? 'N/A';
   const projectDescription =
     projectData.projects[projectIndex]?.projectDescription ?? 'N/A';
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   const projectImageURL =
     projectData.projects[projectIndex]?.projectImageURL ?? PLACEHOLDER_IMAGE;
 
