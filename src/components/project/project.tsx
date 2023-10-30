@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import TaskColumn from '../task-column/task-column';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useEffect } from 'react';
-import { PLACEHOLDER_IMAGE } from '../../constants/constants';
 import { DragDropContext, DropResult } from '@hello-pangea/dnd';
 import { updateProjectData } from '../../redux/slices/projectsDataSlice';
 
@@ -21,9 +20,6 @@ function Project() {
   const projectName = projectData.projects[projectIndex]?.projectName ?? 'N/A';
   const projectDescription =
     projectData.projects[projectIndex]?.projectDescription ?? 'N/A';
-  /* eslint-disable @typescript-eslint/no-unused-vars */
-  const projectImageURL =
-    projectData.projects[projectIndex]?.projectImageURL ?? PLACEHOLDER_IMAGE;
 
   const onDragEnd = async (result: DropResult) => {
     if (!result.destination) return;
